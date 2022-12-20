@@ -240,6 +240,15 @@
         $get_employees_results = mysqli_query($conn, $get_employees);
             
     }
+
+    function get_manager(){
+        global $conn, $get_manager_results;
+
+        $get_manager = "SELECT * FROM employees WHERE designation = '1'";
+        $get_manager_results = mysqli_query($conn, $get_manager);
+            
+    }
+
     function branch_employees(){
         global $conn;
         $logged_in_branch = $_SESSION['user']['branch'];
@@ -340,11 +349,13 @@
         if(isset($_POST['update_roles_btn'])){
 
             $email_id = $_POST['email_id'];
+            $utype = $_POST['utype'];
+            $branch = $_POST['branch'];
             $designation = $_POST['designation'];
 
                 
-                $update_roles_sql = "UPDATE employees SET designation='$designation' WHERE id= '$email_id'";
-
+                $update_roles_sql = "UPDATE employees SET designation='$designation', utype='$utype', branch='$branch' WHERE id= '$email_id'";
+                var_dump($update_roles_sql);
                 $update_roles_results = mysqli_query($conn, $update_roles_sql);
                 // header('location: audits.php');
         }else{
@@ -384,7 +395,7 @@
         
             $branch =  ($_POST['branch']);
             $location =  ($_POST['location']);
-            $manager =  ($_POST['manager']);
+            // $manager =  ($_POST['manager']);
         }
         if(empty($branch)){
             array_push($errors, 'Branch is blank');
@@ -393,13 +404,13 @@
             array_push($errors, 'Location is blank');
         }
         // check if passwords are similar
-        if(empty($manager)){
-            array_push($errors, 'Manager not inputed');
-        }
+        // if(empty($manager)){
+        //     array_push($errors, 'Manager not inputed');
+        // }
         // Encrypt password if no error & register
         if(count($errors) == 0){
         
-                $query = "INSERT INTO branches (bname, location, bmanager) VALUES('$branch', '$location', '$manager')";
+                $query = "INSERT INTO branches (bname, location) VALUES('$branch', '$location')";
                 mysqli_query($conn, $query);
                 
                 //echo"<script>alert('Department Added Successfully!');</script>";
@@ -547,6 +558,19 @@
             // mysqli_free_result($count_employees_results);
         }
     }
+
+    function count_services(){
+        global $conn, $count_employees_results;
+
+        $count_services_sql = "SELECT * FROM services";
+        if ($count_services_results = mysqli_query($conn, $count_services_sql)){
+            $rowCount = mysqli_num_rows($count_services_results);
+            printf($rowCount);
+
+            // mysqli_free_result($count_services_results);
+        }
+    }
+
     function employees(){
         global $conn, $employees_results;
 

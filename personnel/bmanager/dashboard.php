@@ -10,7 +10,7 @@
                             }
                         ?>
                     </h1>
-                    <span>Branches</span>
+                    <span>Branch</span>
                 </div>
                 <div>
                     <span class="las la-code-branch"></span>
@@ -18,7 +18,7 @@
             </div>
             <div class="card-single">
                 <div>
-                    <h1><?php count_users(); ?></h1>
+                    <h1><?php count_services(); ?></h1>
                     <span>Services</span>
                 </div>
                 <div>

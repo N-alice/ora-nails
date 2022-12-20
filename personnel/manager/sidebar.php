@@ -2,7 +2,7 @@
     <div class="sidebar">
         <div class="sidebar-brand">
         <!-- visibility: visible; margin-left: -10px; -->
-            <h2><span  style="visibility: visible; font-size:28px;">Ora</span><span>Nail Spot Portal</span></h2>
+            <h2><span  style="visibility: visible; font-size:28px;">Ora</span><span>Manager's Portal</span></h2>
         </div>
         <div class="sidebar-menu">
             <ul>

@@ -147,5 +147,5 @@
         }
     }
         </style>
-    <title>Ora Nail Spot</title>
+    <title>Manager's Portal</title>
 </head>

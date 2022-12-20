@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="./css/responsive.css">
     <script src="./js/script.js"></script>
-    <title>health & Safety Audit</title>
+    <title>Register</title>
 </head>
 <body>
     <div class="login-page">

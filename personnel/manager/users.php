@@ -4,7 +4,7 @@
                     <h1>
                         <?php count_users(); ?>
                     </h1>
-                    <span>Users</span>
+                    <span>Clients</span>
                 </div>
                 <div>
                     <span class="las la-users"></span>

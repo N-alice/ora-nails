@@ -10,7 +10,7 @@
                             }
                         ?>
                     </h1>
-                    <span>Users</span>
+                    <span>Branch</span>
                 </div>
                 <div>
                     <span class="las la-users"></span>

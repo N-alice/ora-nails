@@ -1,3 +1,4 @@
+
 <div class="cards">
             <div class="card-single">
                 <div>
@@ -64,7 +65,7 @@
                                 <tbody>
                                     <?php 
                                     $u=1;
-                                        $get_branches = "SELECT br.id as id,br.bname,br.location, emp.fname,emp.lname FROM `branches` br inner join employees as emp on emp.id = br.bmanager;";
+                                        $get_branches = "SELECT br.id as id,br.bname,br.location, emp.fname,emp.lname FROM `employees` emp inner join branches as br on br.id = emp.branch AND emp.utype='bmanager';";
                                         $get_branches_results = mysqli_query($conn, $get_branches);
                                         if(mysqli_num_rows($get_branches_results)>0){
                                             while($row =mysqli_fetch_array($get_branches_results)){

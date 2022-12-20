@@ -554,6 +554,18 @@
         }
     }
 
+    function count_appointments(){
+        global $conn;
+
+        $count_appointments_sql = "SELECT * FROM appointments INNER JOIN users ON users.id=appointments.user_id" ;
+        if ($count_appointments_results = mysqli_query($conn, $count_appointments_sql)){
+            $rowCount = mysqli_num_rows($count_appointments_results);
+            printf($rowCount);
+
+            mysqli_free_result($count_appointments_results);
+        }
+    }
+
     //New Branches
     if(isset($_POST['add_employees_btn'])){
         add_employees();

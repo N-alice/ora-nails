@@ -50,21 +50,7 @@
                 <label>Location</label>
                 <input type="text" name="location" placeholder="Location...">
             </div>
-            <div class="input-group">
-                                    <label for="">Staff</label>
-                                    <select name="manager" id="">
-                                        <option value="" selected disabled> Choose One...</option>
-                                        <?php
-                                        get_employees();
-                                        if(mysqli_num_rows($get_employees_results) > 0){
-                                            while($row = mysqli_fetch_array($get_employees_results)){
-                                                echo "<option value= ". $row['fname'] .">" .$row['fname'] ." " .$row['lname'] ."</option>";
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-        </div>
+                    </div>
         <div class="container" style="background-color:#f1f1f1">
             <button type="submit" name="add_branches_btn">Add Branch</button>
             <button type="button" onclick="document.getElementById('add_branch').style.display='none'" class="cancelbtn" >Cancel</button>
@@ -168,6 +154,25 @@
                             }
                         ?>
                     </select>
+                    <select name="utype" id="utype">
+                        <option value="" selected disabled>Choose user type</option>
+                        <option value="staff">Staff</option>
+                        <option value="manager">Manager</option>
+                        <option value="bmanager">Branch Manager</option>
+                    </select>
+                    
+                    <select name="branch" id="branch">
+                    <option value="" disabled selected>Select Branch</option>
+                        <?php 
+                            get_branches();                            
+                            if(mysqli_num_rows($get_branches_results) > 0){
+                                while($row = mysqli_fetch_array($get_branches_results)){
+                                    echo "<option value=" .$row['id']."> " .$row['bname']."</option>";
+                                }
+                            }
+                        ?>
+                    </select>
+
                     <select name="designation" id="designation">
                     <option value="" disabled selected>Select Designation</option>
                         <?php 

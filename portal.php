@@ -12,7 +12,7 @@
             </div>
             <div class="card-single">
                 <div>
-                    <h1><?php count_users(); ?></h1>
+                    <h1><?php count_appointments(); ?></h1>
                     <span>Pending Appointments</span>
                 </div>
                 <div>
